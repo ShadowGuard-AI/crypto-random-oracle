@@ -100,7 +100,10 @@ def generate_random_oracle_output(input_data, length, salt=None, algorithm="SHA2
             # a digest size error, even though HKDF can expand a 64
             # byte digest to whatever length was requested; the digest
             # size and the output length are separate choices here.
-            hash_algorithm = hashes.BLAKE2b(digest_size=min(length, 64))
+            # The width must be exactly 64, not min(length, 64): HKDF
+            # in this library rejects a BLAKE2b digest under 64 bytes,
+            # so a 32 byte request still failed after the cap above.
+            hash_algorithm = hashes.BLAKE2b(digest_size=64)
         else:
             raise ValueError(f"Unsupported hash algorithm: {algorithm}")
 
