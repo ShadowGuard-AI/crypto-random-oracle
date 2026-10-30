@@ -95,19 +95,25 @@ def generate_random_oracle_output(input_data, length, salt=None, algorithm="SHA2
         elif algorithm == "SHA512":
             hash_algorithm = hashes.SHA512()
         elif algorithm == "BLAKE2b":
-            hash_algorithm = hashes.BLAKE2b(digest_size=length)
+            # A BLAKE2b digest is at most 64 bytes. Asking it for the
+            # output length directly made any length over 64 fail with
+            # a digest size error, even though HKDF can expand a 64
+            # byte digest to whatever length was requested; the digest
+            # size and the output length are separate choices here.
+            hash_algorithm = hashes.BLAKE2b(digest_size=min(length, 64))
         else:
             raise ValueError(f"Unsupported hash algorithm: {algorithm}")
 
-        # Generate a random salt if none is provided
-        if salt is None:
-            salt_bytes = os.urandom(16)  # 16 bytes is a reasonable default
-            logging.info("Generated a random salt.")
-        else:
-            salt_bytes = salt.encode("utf-8")
-            logging.info("Using provided salt.")
-
         if key is None:
+            # The salt only enters the HKDF path below. Generating and
+            # logging one in HMAC mode as well made a run look salted
+            # when the salt had no effect on the output at all.
+            if salt is None:
+                salt_bytes = os.urandom(16)  # 16 bytes is a reasonable default
+                logging.info("Generated a random salt.")
+            else:
+                salt_bytes = salt.encode("utf-8")
+                logging.info("Using provided salt.")
             # Use HKDF without HMAC for basic Random Oracle implementation
             hkdf = HKDF(
                 algorithm=hash_algorithm,
@@ -119,14 +125,25 @@ def generate_random_oracle_output(input_data, length, salt=None, algorithm="SHA2
             output = hkdf.derive(input_bytes)
 
         else:
-            #Implement HKDF-HMAC
+            if salt is not None:
+                logging.warning("A salt was provided with a key; the salt is not used in HMAC mode.")
+            # HMAC mode returns one digest, truncated to the requested
+            # length. It cannot stretch past the digest size, and the
+            # old code silently returned a short output instead: a run
+            # asking for 64 bytes with SHA256 printed 32 and called it
+            # done. Refuse the shape instead of mislabelling it.
+            if length > hash_algorithm.digest_size:
+                raise ValueError(
+                    f"With a key, the output length cannot exceed the {algorithm} digest size "
+                    f"({hash_algorithm.digest_size} bytes); got {length}. Drop the key to use HKDF, "
+                    "which can produce longer outputs."
+                )
             key_bytes = key.encode('utf-8')
 
-            # Generate HMAC
             h = hmac.HMAC(key_bytes, hash_algorithm, backend=default_backend())
             h.update(input_bytes)
             output = h.finalize()
-           
+
             if len(output) > length:
                 output = output[:length]
 
