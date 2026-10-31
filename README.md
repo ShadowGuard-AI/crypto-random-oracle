@@ -7,7 +7,7 @@ Simulates a random oracle for cryptographic research and testing, outputting ran
 `git clone https://github.com/ShadowStrikeHQ/crypto-random-oracle`
 
 ## Usage
-`./crypto-random-oracle [params]`
+`python3 main.py [params]`
 
 Without a key the output is HKDF over the chosen hash and can be any
 positive length. With `-k` the output is a single HMAC digest cut to
@@ -19,11 +19,11 @@ tool warns when one is supplied with a key.
 ## Parameters
 - `-h`: Show help message and exit
 - `-i`: The input string to the random oracle.
-- `-l`: No description provided
+- `-l`: The length of the output in bytes (default: 32).
 - `-s`: An optional salt for the random oracle. If not provided, a random salt is generated.
 - `-n`: Number of outputs to generate for the same input and configuration.
 - `-k`: An optional key for the HMAC. If not provided HMAC will not be used.
-- `-a`: No description provided
+- `-a`: Hash algorithm to use (default: SHA256).
 
 ## License
 Copyright (c) ShadowStrikeHQ
