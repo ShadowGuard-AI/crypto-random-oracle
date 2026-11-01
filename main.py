@@ -118,6 +118,10 @@ def generate_random_oracle_output(input_data, length, salt=None, algorithm="SHA2
                 salt_bytes = salt.encode("utf-8")
                 logging.info("Using provided salt.")
             # Use HKDF without HMAC for basic Random Oracle implementation
+            # The fixed info string ties every output of this tool to
+            # this one context label. Two runs with the same input,
+            # salt, and algorithm therefore agree byte for byte, which
+            # is the determinism a test fixture wants from an oracle.
             hkdf = HKDF(
                 algorithm=hash_algorithm,
                 length=length,
@@ -184,6 +188,12 @@ def main():
         logging.info(f"HMAC Key: {'Provided' if args.key else 'Not used'}")
 
 
+        # What repeats mean depends on the salt. With no salt given,
+        # each call makes a fresh random one inside the function, so
+        # the outputs differ. With a salt (or a key, which is also
+        # deterministic), every call derives the same bytes and this
+        # loop prints the identical line num_outputs times. Both are
+        # expected; only the first looks like several random outputs.
         for i in range(args.num_outputs):
             output = generate_random_oracle_output(
                 args.input, args.length, args.salt, args.algorithm, args.key
