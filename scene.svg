@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" role="img" aria-label="The course in three bands: bunting stirring and a bead of condensation on the lettuce cover in the far band, entrants advancing at racing pace in the middle band, the steward pencil moving and one lettuce leaf settling in the near band">
+<rect width="1200" height="300" fill="#d8d2b8"/>
+<rect x="0" y="0" width="1200" height="88" fill="#c9c2a2"/>
+<g stroke="#b3541e" stroke-width="2" fill="none"><path d="M60 20 Q 300 44 560 20"><animate attributeName="d" values="M60 20 Q 300 44 560 20;M60 20 Q 300 34 560 20;M60 20 Q 300 44 560 20" dur="9s" repeatCount="indefinite"/></path><path d="M640 20 Q 880 44 1140 20"><animate attributeName="d" values="M640 20 Q 880 34 1140 20;M640 20 Q 880 44 1140 20;M640 20 Q 880 34 1140 20" dur="11s" repeatCount="indefinite"/></path></g>
+<rect x="520" y="34" width="160" height="14" fill="#8a6f48"/>
+<ellipse cx="600" cy="66" rx="34" ry="16" fill="#568c3c"/>
+<path d="M566 66 a34 20 0 0 1 68 0" fill="#eef2f0" stroke="#0e7c86" stroke-width="2"/>
+<circle cx="628" cy="80" r="3" fill="#bcd8da"><animate attributeName="cy" values="80;86;80" keyTimes="0;0.5;1" dur="20s" repeatCount="indefinite"/></circle>
+<rect x="0" y="88" width="1200" height="118" fill="#d8d2b8"/>
+<line x1="0" y1="130" x2="1200" y2="130" stroke="#f7f5ee" stroke-width="3"/><line x1="0" y1="172" x2="1200" y2="172" stroke="#f7f5ee" stroke-width="3"/>
+<g><animateTransform attributeName="transform" type="translate" values="-160 0;1180 0" dur="120s" repeatCount="indefinite"/><ellipse cx="0" cy="118" rx="34" ry="22" fill="#0e7c86"/><rect x="26" y="126" width="30" height="9" fill="#c4b28c"/></g>
+<g><animateTransform attributeName="transform" type="translate" values="-160 0;1180 0" dur="150s" repeatCount="indefinite"/><ellipse cx="0" cy="160" rx="30" ry="20" fill="#0e7c86"/><rect x="22" y="168" width="27" height="8" fill="#c4b28c"/></g>
+<rect x="0" y="206" width="1200" height="94" fill="#cfc8a8"/>
+<line x1="0" y1="222" x2="1200" y2="222" stroke="#f7f5ee" stroke-width="5"/>
+<rect x="820" y="238" width="220" height="16" fill="#8a6f48"/>
+<rect x="840" y="222" width="150" height="18" fill="#f7f5ee" stroke="#b3541e"/>
+<g stroke="#3a3a3a" stroke-width="3"><line x1="856" y1="232" x2="884" y2="232"><animate attributeName="x2" values="884;910;884" dur="14s" repeatCount="indefinite"/></line><line x1="856" y1="248" x2="880" y2="248"><animate attributeName="x2" values="880;904;880" dur="17s" repeatCount="indefinite"/></line></g>
+<ellipse cx="1070" cy="248" rx="30" ry="13" fill="#568c3c"/>
+<g opacity="0"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.8;0.86;1" dur="120s" repeatCount="indefinite"/><ellipse cx="1040" cy="272" rx="24" ry="9" fill="#568c3c"><animateTransform attributeName="transform" type="rotate" values="0 1040 264;-14 1040 264" dur="120s" repeatCount="indefinite"/></ellipse></g>
+</svg>

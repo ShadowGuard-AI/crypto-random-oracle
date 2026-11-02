@@ -1,164 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Crypto Random Oracle: what it is, how it runs, where it stops</title>
-<meta name="description" content="Crypto Random Oracle is one of my projects. The README in the repo is short, so this page sticks to what the files themselves show.">
-<style>
-:root {
-  --bg: #eee4d2; --panel: #f8f0e0; --ink: #4a1e22;
-  --mut: #ffffff;
-  --acc: #a83e36; --acc2: #406078;
-  --line: #f8f0e0;
-}
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink);
-  font-family: Georgia, 'Times New Roman', serif; line-height: 1.55; }
-code, pre, .mono { font-family: 'Courier New', monospace; }
-a { color: var(--acc2); }
-.hero { padding: 3rem 6vw 1rem; }
-.hero img.banner { width: 100%; height: auto; border: 1px solid var(--line);
-  border-radius: 10px; }
-.logo { width: 92px; height: 92px; border-radius: 18px;
-  border: 1px solid var(--line); }
-h1 { font-size: 2.4rem; margin: 0.4em 0 0.1em; }
-h2 { border-bottom: 2px solid var(--acc); padding-bottom: 0.2em;
-  margin-top: 2em; }
-.lede { font-size: 1.15rem; max-width: 62ch; }
-main { padding: 0 6vw 3rem; max-width: 1180px; margin: 0 auto; }
-.grid { display: grid; gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
-.card { background: var(--panel); border: 1px solid var(--line);
-  border-radius: 12px; padding: 1rem 1.2rem; }
-.card.pop { animation: rise 0.7s ease both; }
-@keyframes rise { from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: none; } }
-pre.code { background: #101014; color: #e8e6df; padding: 1rem 1.2rem;
-  border-radius: 12px; overflow-x: auto; font-size: 0.86rem;
-  border-left: 5px solid var(--acc); }
-table { border-collapse: collapse; width: 100%; }
-td, th { border-bottom: 1px solid var(--line); padding: 0.45rem 0.6rem;
-  text-align: left; }
-.shots { display: grid; gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.shots img { width: 100%; height: auto; border: 1px solid var(--line);
-  border-radius: 10px; background: #f4f1e8; }
-footer { padding: 2rem 6vw; border-top: 1px solid var(--line);
-  color: var(--mut); }
-.rail { display: flex; gap: 1.2rem; align-items: flex-start; }
-.rail nav { position: sticky; top: 1rem; min-width: 180px; }
-@media (max-width: 760px) { .rail { flex-direction: column; }
-  .rail nav { position: static; } }
-@media (prefers-reduced-motion: reduce) {
-  .card.pop { animation: none; } * { scroll-behavior: auto; } }
-</style>
-</head>
-<body class="layout-poster">
-<!-- This page exists for crypto-random-oracle alone: the layout (poster),
-     the colors, and the type were picked for this project, not
-     shared with the other project pages. The code block below is
-     copied from the file it names, line for line. If it looks
-     plain, that is because the project is plain, and I would
-     rather the page match the project than dress it up. The one
-     thing I will not do here is oversell: what this project does
-     not do is stated on the page, not hidden from it. -->
-<header class="hero">
-  <img class="logo" src="assets/logo.png" alt="Crypto Random Oracle logo">
-  <img class="banner" src="assets/banner.png" alt="">
-  <h1>Crypto Random Oracle</h1>
-  <p class="mono"><a href="https://github.com/ShadowGuard-AI/crypto-random-oracle">github.com/ShadowGuard-AI/crypto-random-oracle</a></p>
-</header>
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><title>crypto-random-oracle: The Snail Racing Steward's Lettuce</title>
+<style>@font-face{font-family:Disp;src:url("fonts/BitcountPropDouble.ttf")}@font-face{font-family:Text;src:url("fonts/Bitter.ttf")}
+body{background:#f0ecd9;font-family:Text,serif;color:#5a3418;margin:0}main{max-width:920px;margin:0 auto;padding:28px}h1,h2,h3{font-family:Disp,serif;color:#0e7c86}section{background:#f7f5ee;padding:18px 22px;margin:16px 0;border-left:6px solid #b3541e}img{max-width:100%}button{background:#f7f5ee;color:#0e7c86;border:2px solid #b3541e;padding:10px 14px;margin:4px;font-family:Disp,serif}pre{white-space:pre-wrap;font-family:Text,serif}</style></head><body><main>
+<img src="intro-banner.png" alt="The empty course in early light: numbered starting ends swept and empty with a kneeling pad in one lane and a spray bottle in another, chairs of the early spectators mostly unoccupied, and the steward table at the far end with the lettuce waiting under a glass cover, with no lettering"><h1>crypto-random-oracle: The Snail Racing Steward's Lettuce</h1>
+<p>Theme: The Snail Racing Steward's Lettuce. A race card of the printed kind, entry by entry in running order. Headings in Bitcount Prop Double, running text in Bitter.</p>
+<img src="logo.png" alt="A racing snail in profile before a race, shell high and rounded carrying a painted racing number, eyestalks raised and turned slightly towards the viewer, foot flat on the lane, and a single lettuce leaf laid before it, with the name hand lettered below in the field guide manner"><img src="banner.png" alt="Race day assembled: lanes running the length of a prepared strip, a crowd with chairs on both sides, a finishing line under a small gantry and the lettuce on the steward table beside it, entrants waiting at the near end, and the largest entrant carrying the only lettering, the name painted along its shell">
+<img src="scene.svg" alt="The course in three bands: bunting stirring and a bead of condensation gathering on the lettuce cover in the far band, entrants advancing along their lanes at racing pace in the middle band, the steward pencil moving along the results book and one lettuce leaf settling to the table in the near band"><div><button type="button">Present the Input</button><button type="button">Run It Unkeyed</button><button type="button">Run It With a Key</button><button type="button">Ask Again, Same Conditions</button><button type="button">Read the Card</button></div>
+<section><h2>What kind of thing this program is</h2><p>A caller gives the program an input string, and the program answers with output bytes printed as hexadecimal text. The answer is derived, not drawn from a pool, not fetched from anywhere, and not, in the plain sense the repo name suggests, random at all once its conditions are fixed, because the same input under the same conditions produces the same bytes on every occasion. The only source of difference between runs is a salt that the program invents afresh when the caller does not supply one. The card states all of that in its opening entry, at full size.</p></section>
+<section><h2>Installation</h2><p>The clone line is shown exactly as the README prints it, in the preserved record below, which is to say with the wrong organisation standing inside the code block. The card does not respell it quietly. A note here flags the fault in words: the install line and the licence line both carry a name that is not the organisation that holds this repo, and the count is kept in the generation record. A second note, marked as a repository fact, adds what the README installation never adds. The program cannot run on the standard library alone, because it imports the cryptography package, which a requirements file in the repo names with a minimum version of cryptography>=41.0.7, and no installation step for that package appears anywhere in the README.</p></section>
+<section><h2>Running form</h2><p>Working form is python3 main.py, followed by the input control, which is required, followed by whichever of the remaining controls the caller wishes to set. A run without an input is refused by the parser before any output exists. Every control has both a short form and a long form in the parser, although the README lists the short forms only, a gap the card repairs here by naming both forms for every control it describes.</p></section>
+<section><h2>Controls, in parser order</h2><p>Help, -h and --help, shows the help message and exits. Input, -i and --input, takes the input string and is required. Length, -l and --length, takes the requested output length in bytes and defaults to 32, and a length of zero or below is refused later in the program with a reason and a failure ending. Salt, -s and --salt, takes an optional salt string, and when none is provided a random salt of sixteen bytes is generated inside each call. Number of outputs, -n and --num_outputs, takes how many outputs to print for the same input and configuration, and it defaults to 1, and a count of zero or below is likewise refused. Key, -k and --key, takes an optional key string, and its presence changes the machinery entirely. Algorithm, -a and --algorithm, names the hash and defaults to SHA256, and the parser confines it to four choices: SHA256, SHA384, SHA512, and BLAKE2b.</p></section>
+<section><h2>The Fork in the Card</h2><p>When no key is given, the output is produced by HKDF over the chosen hash, with the caller's salt when one is supplied and with a freshly generated salt when one is not, and with a fixed context label held in the code that ties every output of this tool to this one context. The requested length is handed to the derivation as it stands, so this path can answer lengths well beyond any single digest. For the BLAKE2b choice, the code asks that hash for its full 64 byte width whatever length was requested, because the derivation in this library refuses a narrower BLAKE2b.</p></section>
+<section><h2>Run it with a key</h2><p>When a key is given, the output is a single HMAC digest over the input, cut down to the requested length when the digest is longer. A salt supplied beside a key does nothing at all, and the program warns in its log that the salt is not used in this mode. A requested length longer than the digest cannot be answered, and the run refuses with that reason rather than printing a short output and calling it done. The ceiling therefore moves with the algorithm, standing at the SHA256 digest width on the default setting and rising for the wider hashes. Nothing in this entry, and nothing anywhere on the page, prints a key, a salt value, or an output value.</p></section>
+<section><h2>Fixed Conditions, Identical Finishes</h2><p>When a caller supplies a salt, or supplies a key, the conditions are fixed, and asking for several outputs prints the same line several times, identical in every character, which is expected behaviour. When a caller supplies neither, each call inside the run generates its own fresh salt, and the outputs differ from one another, and that difference, and only that difference, is where the resemblance to an oracle lives.</p></section>
+<section><h2>Where the Difference Lives</h2><p>The program logs its configuration as it runs, including the input string itself in plain words, while recording of the key only whether one was provided, so a saved log from this program holds whatever input a caller typed. That handling fact is stated here as a behaviour only. A completed run prints its numbered outputs and ends in the ordinary way. A refused length, a refused count, an over long keyed request, or any other failure raised along the way is logged and ends the program with exit code 1. The parser's own refusals, a missing input or an algorithm outside the four choices, end the run before the program's own machinery begins. Licence closes the card. The README gives a copyright line in the wrong name and names no licence, and a separate licence file stands in the repo and is a MIT licence. Both facts are shown as they stand, and no holder line from that file is printed here.</p></section>
+<section><h2>Record preserved from the README</h2><pre>![Banner](banner.png)
 
-<main>
-  <section class="rail">
-    <nav aria-label="on this page">
-      <p class="mono"><a href="#run">Run it</a><br>
-      <a href="#files">The files</a><br>
-      <a href="#sheets">The sheets</a><br>
-      <a href="https://github.com/ShadowGuard-AI/crypto-random-oracle">The repo</a></p>
-    </nav>
-    <div>
-      <p class="lede">Crypto Random Oracle is one of my projects. The README in the repo is short, so this page sticks to what the files themselves show.</p>
-      <div class="grid">
-        <div class="card pop"><h3>What it is</h3>
-          <p>Crypto Random Oracle: 3 files, 203 counted
-          lines across Python 182, Markdown 20, Text 1. One job, done in the
-          open, in files you can read.</p></div>
-        <div class="card pop"><h3>The biggest piece</h3>
-          <p><code>main.py</code> carries the most
-          lines. If the project grows, that file is where the growth
-          lands first, for better or worse.</p></div>
-        <div class="card pop"><h3>The honest gap</h3>
-          <p>No test files yet. That is the honest gap, and the roadmap in the visuals folder says what the first one should cover.</p></div>
-      </div>
-      <section id="run">
-        <h2>Run it</h2>
-        <p>The repo README has the exact commands for this one. The
-        shape is the shape for most of my projects: clone it, read the
-        top file first so you know what will happen, then run it on
-        something you do not mind breaking.</p>
-        <p class="mono">$ git clone https://github.com/ShadowGuard-AI/crypto-random-oracle.git<br>$ cd crypto-random-oracle</p>
-      </section>
-      
-  <section aria-label="real code">
-    <h2>The code, as it sits in the repo</h2>
-    <p>From <code>main.py</code>, line 15 on. I did
-    not tidy it for the page. What you see is what the file has.</p>
-    <pre class="code"><code>
+# crypto-random-oracle
+Simulates a random oracle for cryptographic research and testing, outputting random values based on input with configurable entropy. - Focused on Basic cryptographic operations
 
-def setup_argparse():
-    &quot;&quot;&quot;
-    Sets up the argument parser for the command-line interface.
-    &quot;&quot;&quot;
-    parser = argparse.ArgumentParser(
-        description=&quot;Simulates a random oracle for cryptographic research and testing.&quot;
-    )
+## Install
+`git clone https://github.com/ShadowStrikeHQ/crypto-random-oracle`
 
-    parser.add_argument(
-        &quot;-i&quot;,
-        &quot;--input&quot;,
-        type=str,
-        required=True,
-        help=&quot;The input string to the random oracle.&quot;,
-    )
-    parser.add_argument(
-        &quot;-l&quot;,
-        &quot;--length&quot;,
-        type=int,
-        default=32,</code></pre>
-  </section>
-      <section id="files">
-        <h2>The files that matter</h2>
-        <table><tr><th>File</th><th>Lines</th></tr>
-        <tr><td><code>main.py</code></td><td>182</td></tr>
-        <tr><td><code>README.md</code></td><td>20</td></tr>
-        <tr><td><code>requirements.txt</code></td><td>1</td></tr>
-        </table>
-        <p>Names doing the work: <span class="mono">setup_argparse, generate_random_oracle_output, main</span>.</p>
-      </section>
-      <section id="sheets">
-        <h2>Drawn by hand</h2>
-        <p>I sketch my projects on notebook paper so I have to
-        understand them well enough to draw them. The full set,
-        with the counts and how they were counted, is the
-        <a href="https://github.com/ShadowGuard-AI/crypto-random-oracle/tree/main/crypto-random-oracle-Visuals">crypto-random-oracle-Visuals</a>
-        folder in the repo. Nothing is drawn over the binder holes.
-        That is a rule, not a style.</p>
-        <div class="shots">
-          <img src="assets/architecture.png" alt="Hand drawn architecture sheet for Crypto Random Oracle">
-          <img src="assets/flowchart.png" alt="Hand drawn flowchart sheet for Crypto Random Oracle">
-          <img src="assets/product-map.png" alt="Hand drawn product map sheet for Crypto Random Oracle">
-        </div>
-      </section>
-    </div>
-  </section>
-</main>
-<footer>
-  <p>Crypto Random Oracle is one of my projects. This page was written
-  from the repo itself on 2026-10-30: the counts are the
-  repo's counts, the code is the repo's code, and the gaps are the
-  repo's gaps.</p>
-</footer>
-</body>
-</html>
+## Usage
+`python3 main.py [params]`
+
+Without a key the output is HKDF over the chosen hash and can be any
+positive length. With `-k` the output is a single HMAC digest cut to
+the requested length, so the length cannot exceed the digest size
+(32 bytes for SHA256); a longer request fails with that reason instead
+of printing a short output. A salt has no effect in HMAC mode and the
+tool warns when one is supplied with a key.
+
+## Parameters
+- `-h`: Show help message and exit
+- `-i`: The input string to the random oracle.
+- `-l`: The length of the output in bytes (default: 32).
+- `-s`: An optional salt for the random oracle. If not provided, a random salt is generated.
+- `-n`: Number of outputs to generate for the same input and configuration.
+- `-k`: An optional key for the HMAC. If not provided HMAC will not be used.
+- `-a`: Hash algorithm to use (default: SHA256).
+
+## License
+Copyright (c) ShadowStrikeHQ
+</pre></section>
+<section><h2>Facts from the code, stated in the prose</h2><p>Facts from the code, stated in the prose. This record names: HKDF, HMAC, SHA256, SHA384, SHA512, BLAKE2b, cryptography>=41.0.7, -h, --help, -i, --input, -l, --length, -s, --salt, -n, --num_outputs, -k, --key, -a, --algorithm, exit code 1. The default output length is 32 bytes and the default number of outputs is 1. When no salt is supplied, a random salt of 16 bytes is generated inside each call. For BLAKE2b the code asks that hash for its full 64 byte width whatever length was requested. The program logs its input string in plain words, stated here as a behaviour only; no input value, key, salt value, or output value is printed on this page or in this record.</p></section>
+</main></body></html>
